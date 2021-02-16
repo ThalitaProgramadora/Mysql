@@ -37,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `db_generation_game_online`.`tb_personagem` (
   `funcionario` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
   `arma` VARCHAR(45) NULL,
-  `poder_ataque` BIGINT(10000) NULL,
-  `poder_defesa` BIGINT(10000) NULL,
+  `poder_ataque` int NULL,
+  `poder_defesa` int NULL,
   `fk_id_classe` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id_per`, `fk_id_classe`),
   INDEX `fk_tb_personagem_tb_classe_idx` (`fk_id_classe` ASC) VISIBLE,
@@ -116,3 +116,4 @@ tb_classe inner join tb_personagem on(tb_classe.id_classe = tb_personagem.id_per
 
 select* from tb_personagem
 where personagem = "arqueiro"; 
+
