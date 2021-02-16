@@ -103,10 +103,10 @@ VALUES
 ("vara");
 
 select * from tb_personagem
-where funcionario > 2000;
+where poder_ataque > 2000;
 
 select * from tb_personagem
-where funcionario between 1000 and 2000;
+where poder_defesa between 1000 and 2000;
 
 select * from tb_personagem
 where funcionario like 'c%';
@@ -115,5 +115,5 @@ select * from
 tb_classe inner join tb_personagem on(tb_classe.id_classe = tb_personagem.id_personagem);
 
 select* from tb_personagem
-where personagem = "arqueiro"; 
+where nome = "arqueiro"; 
 
