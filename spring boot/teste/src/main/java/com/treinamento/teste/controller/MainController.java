@@ -16,7 +16,7 @@ public class MainController {// isso significa que esta classe é um controlador
 	@Autowired // Isso significa obter o bean chamado ProdutosRepository
     // Que é gerado automaticamente pelo Spring, vamos usá-lo para ligar os dados
 	 private ProdutoRepository ProdutoRepository;
-	 @PostMapping(path="/add") 
+	 @PostMapping
 	  public @ResponseBody String addNewProduto (@RequestParam String nomeProduto
 	      , @RequestParam double valor , @RequestParam long quantidade) {
 		// @ResponseBody significa que a string retornada é a resposta, não um nome de visualização
@@ -30,7 +30,7 @@ public class MainController {// isso significa que esta classe é um controlador
 	    return "Salvo com sucesso";
 	  }
 
-	  @GetMapping(path="/all")
+	  @GetMapping
 	  public @ResponseBody Iterable<Produtos> getAllProdutos() {
 		// Isso retorna um JSON ou XML com os usuários
 	    return ProdutoRepository.findAll();
