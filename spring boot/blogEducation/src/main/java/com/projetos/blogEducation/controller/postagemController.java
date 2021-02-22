@@ -21,7 +21,8 @@ import com.projetos.blogEducation.repository.postagemRepository;
 @RestController
 //serve para definir qual é a  uri que vai acessar essa classe, 
 //serve para quando for rodar essa classe no postman
-@RequestMapping("/postagens")
+@RequestMapping(path="/postagens")
+//path="/demo"
 //quando tiver uma origem de requisição colocamos aqui se saber qual é
 //se ainda não sabemos qual é essa origem colocamos o asterisco
 @CrossOrigin("*")
@@ -38,13 +39,13 @@ public class postagemController {
 	}
 	@GetMapping("/{id}")
 	public ResponseEntity<postagem> GetById(@PathVariable int id){
-		return (ResponseEntity<postagem>) repository.findById(id)
+		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<postagem>> GetByTitulo(@PathVariable String titulo){
-		return(ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo)));
+		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	@PostMapping
 	public ResponseEntity<postagem> post(@RequestBody postagem postagem){

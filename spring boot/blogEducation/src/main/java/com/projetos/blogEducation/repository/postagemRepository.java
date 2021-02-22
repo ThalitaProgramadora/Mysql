@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.projetos.blogEducation.model.postagem;
 
 @Repository
-public interface postagemRepository<Int> extends JpaRepository<postagem, Int> {
+public interface postagemRepository extends JpaRepository<postagem, Integer> {
 	// consulta pelo titulo da postagem
 	public List<postagem> findAllByTituloContainingIgnoreCase(String titulo);
 }

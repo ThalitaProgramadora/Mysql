@@ -9,13 +9,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.sun.istack.NotNull;
 
 @Entity
 public class postagem {
 	// serve para ideintificar a chave primaria da tabela
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private @Id int id;
 	@NotNull
 	@Size(min = 5, max = 20)
